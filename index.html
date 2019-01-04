@@ -12,6 +12,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -24,7 +25,10 @@
       rel="stylesheet"
       href="node_modules/font-awesome/css/font-awesome.css"
     />
+
     <link rel="stylesheet" href="css/styles.css" />
+
+    <!--endbuild-->
   </head>
 
   <body>
@@ -65,9 +69,7 @@
             </li>
           </ul>
           <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
-              <span class="fa fa-sign-in"></span> Login
-            </a>
+            <a id="loginButton"> <span class="fa fa-sign-in"></span> Login </a>
           </span>
         </div>
       </div>
@@ -284,7 +286,18 @@
 
     <header class="jumbotron">
       <div class="container">
-        <div class="row row-header"></div>
+        <!-- Button for unrelated stuff -->
+        <!-- <div class="row row-header justify-content-center ">
+          <div class="col-12 col-sm-6">
+            <button
+              class="btn btn-danger btn-block"
+              type="button"
+              id="buttonMagic"
+            >
+              Press Me
+            </button>
+          </div>
+        </div> -->
         <div class="row row-header">
           <div class="col-12 col-sm-6">
             <h1>Ristorante con Fusion</h1>
@@ -305,8 +318,7 @@
             <a
               role="button"
               class="btn btn-warning btn-sm btn-block"
-              data-toggle="modal"
-              data-target="#reserveTable"
+              id="reserveButton"
             >
               Reserve Table
             </a>
@@ -559,35 +571,6 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        $("#mycarousel").carousel({ interval: 2000 });
-        $("#carousel-pause").click(function() {
-          $("#mycarousel").carousel("pause");
-        });
-        $("#carouselButton").click(function() {
-          if (
-            $("#carouselButton")
-              .children("span")
-              .hasClass("fa-pause")
-          ) {
-            $("#carouselButton")
-              .children("span")
-              .addClass("fa-play")
-              .removeClass("fa-pause");
-            $("#mycarousel").carousel("pause");
-          } else {
-            $("#carouselButton")
-              .children("span")
-              .addClass("fa-pause")
-              .removeClass("fa-play");
-            $("#mycarousel").carousel("cycle");
-          }
-        });
-        // $("#carousel-destroy").click(function() {
-        //   $("#mycarousel").carousel("dispose");
-        // });
-      });
-    </script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
